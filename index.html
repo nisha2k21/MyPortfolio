@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisha Kumari - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8e8d0 0%, #ecdac7 100%);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #f8e8d0 0%, #ecdac7 70%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-glow {
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 10px 30px rgba(255, 189, 89, 0.4);
+            transform: scale(1.05);
+        }
+        .custom-shape-divider-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .custom-shape-divider-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        .custom-shape-divider-bottom .shape-fill {
+            fill: #ecdac7;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .modal-content button {
+            margin: 5px;
+        }
+        .contact-creative {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @media (max-width: 640px) {
+            .navbar a {
+                font-size: 12px;
+                padding: 2px;
+            }
+            .hero-bg img {
+                max-width: 200px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-xl fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-extrabold text-amber-800">Nisha Kumari</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#home" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">About</a>
+                    <a href="#experience" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Experience</a>
+                    <a href="#projects" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Projects</a>
+                    <a href="#skills" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Skills</a>
+                    <a href="#achievements" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Achievements</a>
+                    <a href="#responsibilities" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Leadership</a>
+                    <a href="#certifications" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Certifications</a>
+                    <a href="#education" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Education</a>
+                    <a href="#contact" class="text-gray-800 hover:text-amber-700 px-3 py-1 rounded-lg text-base font-semibold transition-all duration-300 border-b-2 border-transparent hover:border-amber-700">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden">
+        <div class="text-center z-10 fade-in-up">
+            <div class="relative">
+                <img id="profileImg" src="NISHA NEW.jpg" alt="Nisha Kumari" class="rounded-full mx-auto mb-8 border-8 border-amber-100 hover-glow cursor-pointer" style="max-width: 300px; box-shadow: 0 15px 40px rgba(255, 189, 89, 0.5);" onclick="openImageModal('profileImg')">
+            </div>
+            <h2 class="text-6xl md:text-7xl font-extrabold mb-6 text-amber-900 drop-shadow-lg">Nisha Kumari</h2>
+            <p class="text-2xl md:text-3xl mb-10 text-gray-800 font-medium">B.Tech Graduate | Quantitative Analyst | Future Leader</p>
+            <a href="#contact" class="inline-block bg-amber-300 text-rose-900 font-bold py-4 px-10 rounded-xl hover:bg-amber-400 transition-all duration-300 hover-glow text-xl">Hire Me Today!</a>
+        </div>
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 sm:py-28 bg-ecdac7/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-rose-800">About Me</h2>
+            <div class="flex flex-col sm:flex-row items-center gap-10 sm:gap-16">
+                <div class="w-full sm:w-1/3 mb-6 sm:mb-0">
+                    <div class="relative">
+                        <img id="aboutImg" src="NISHA NEW.jpg" alt="Nisha Kumari" class="rounded-full mx-auto w-full max-w-xs sm:max-w-md border-8 border-rose-100 hover-glow cursor-pointer" onclick="openImageModal('aboutImg')">
+                    </div>
+                </div>
+                <div class="w-full sm:w-2/3">
+                    <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-700 leading-relaxed">I am a 2025 B.Tech graduate in Electrical & Electronics Engineering with a passion for quantitative finance, algorithmic trading, and data analytics. My journey has been shaped by hands-on roles at WorldQuant Brain and Summer of Quant 2024 at IIT Kharagpur, where I honed my problem-solving skills and delivered impactful solutions.</p>
+                    <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">With a strong foundation in programming, financial modeling, and leadership, I am eager to contribute to dynamic teams. Let’s connect to explore how I can elevate your organization!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 sm:py-28 bg-f8e8d0/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-amber-800">Work Experience</h2>
+            <div class="space-y-8 sm:space-y-12">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-rose-800">Quantitative Research Consultant</h3>
+                    <p class="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">WorldQuant Brain, India | April 2023 - March 2025</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 sm:space-y-3 text-base sm:text-lg">
+                        <li>Completed advanced coursework on financial instruments, pricing models, and volatility analysis.</li>
+                        <li>Enhanced pricing forecasts by analyzing historical volatility, boosting accuracy by 15%.</li>
+                        <li>Executed simulated trades in real-time, refining strategies under expert mentorship.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-rose-800">Quantitative Finance & Algorithmic Trading</h3>
+                    <p class="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">Summer of Quant 2024, IIT Kharagpur | June 2024 - August 2024</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 sm:space-y-3 text-base sm:text-lg">
+                        <li>Performed advanced backtesting with Pyfolio and Zipline in simulated markets.</li>
+                        <li>Mastered derivatives and pricing models for effective risk management.</li>
+                        <li>Leveraged Python for data analysis and automated trading strategy testing.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 sm:py-28 bg-ecdac7/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-amber-800">My Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <div class="relative">
+                        <img id="project1Img" src="nisha good.jpg" alt="Deep Learning in Option Pricing" class="w-full h-40 sm:h-56 object-cover rounded-xl mb-4 sm:mb-6 cursor-pointer" onclick="openImageModal('project1Img')">
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-rose-800">Deep Learning in Option Pricing</h3>
+                    <p class="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg">Developed an implied volatility surface with Black-Scholes and implemented the Heston model using neural networks and optimization for precise pricing.</p>
+                    <a href="#" class="text-amber-600 font-bold text-base sm:text-xl hover:underline">View Project</a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <div class="relative">
+                        <img id="project2Img" src="nisha good.jpg" alt="Portfolio Optimization Model" class="w-full h-40 sm:h-56 object-cover rounded-xl mb-4 sm:mb-6 cursor-pointer" onclick="openImageModal('project2Img')">
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-rose-800">Portfolio Optimization Model</h3>
+                    <p class="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg">Built a Markowitz-based model in Python, reducing portfolio risk by 15% while maintaining returns, visualized with an efficient frontier.</p>
+                    <a href="#" class="text-amber-600 font-bold text-base sm:text-xl hover:underline">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 sm:py-28 bg-f8e8d0/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-rose-800">My Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">Python</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">C++</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">TensorFlow</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">Tableau</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">Git</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">Financial Modeling</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">SQL</p>
+                </div>
+                <div class="bg-ecdac7 p-4 sm:p-6 rounded-xl text-center shadow-lg hover-glow transition-all duration-300">
+                    <p class="font-semibold text-amber-800 text-base sm:text-xl">Excel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 sm:py-28 bg-ecdac7/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-amber-800">Scholastic Achievements</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">International Quant Championship 2023</h3>
+                    <p class="text-gray-700 text-base sm:text-lg">Secured rank 240 in the Global Final Round, showcasing exceptional skills in quantitative trading and strategic analysis.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">Google Generation Scholarship 2023</h3>
+                    <p class="text-gray-700 text-base sm:text-lg">Selected as one of the top 40 out of 14,000+ applicants in the APAC region, recognizing academic excellence and leadership potential.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">Stanford University Code in Place 2024</h3>
+                    <p class="text-gray-700 text-base sm:text-lg">Achieved top ranking for outstanding programming skills and academic prowess in a globally competitive program.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">Harvard WECode Scholarship 2024</h3>
+                    <p class="text-gray-700 text-base sm:text-lg">Selected among the top 5% of women from 90,000 global applicants, highlighting dedication and technical expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="responsibilities" class="py-20 sm:py-28 bg-f8e8d0/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-rose-800">Positions of Responsibility</h2>
+            <div class="space-y-8 sm:space-y-12">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-amber-800">Community Lead</h3>
+                    <p class="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">Google Developers Students Club | July 2022 - June 2023</p>
+                    <p class="text-gray-700 text-base sm:text-lg">Organized 7+ technical events, mentored 5 juniors, and led Bihar’s largest student tech fest with 25+ volunteers, boosting engagement by 25%.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-amber-800">Microsoft Learn Student Ambassador</h3>
+                    <p class="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">India | April 2023 - April 2025</p>
+                    <p class="text-gray-700 text-base sm:text-lg">Conducted 40+ hours of sessions for freshers and led a 40+ member team to execute a campus tech fest with seamless logistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 sm:py-28 bg-ecdac7/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-amber-800">Certifications</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">Google IT Support Certificate</h3>
+                    <p class="text-gray-700 text-base sm:text-lg">Completed in 2024, covering IT fundamentals and support skills.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">IBM Data Science Professional Certificate</h3>
+                    <p class="text-gray-700 text-base sm:text-lg">Completed in 2025, focusing on data analysis and machine learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 sm:py-28 bg-f8e8d0/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 text-rose-800">Education</h2>
+            <div class="space-y-6 sm:space-y-8">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">B.Tech in Electrical & Electronics Engineering</h3>
+                    <p class="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">Gaya College of Engineering, Aryabhatta Knowledge University | 2021 - 2025</p>
+                    <p class="text-gray-700 text-base sm:text-lg">CGPA: 7.46/10, focused on quantitative finance and programming skills.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 hover-glow transition-all duration-300">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-rose-800">Higher Secondary Certificate (12th)</h3>
+                    <p class="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">Patna Central School, Bihar | 2019 - 2021</p>
+                    <p class="text-gray-700 text-base sm:text-lg">Percentage: 85%, with a strong foundation in mathematics and science.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 sm:py-28 bg-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-gray-800">Contact Form</h2>
+            <p class="text-lg sm:text-xl mb-8 sm:mb-10 text-gray-600">Let's Connect! I'm thrilled about the possibility of collaborating with you! Whether you're looking to hire me full-time, offer an internship, seek consulting services, provide freelance opportunities, share valuable suggestions, or simply discuss further, I'd love to hear from you. Please feel free to reach out using the form below, and I’ll get back to you as soon as possible. Thank you for visiting my portfolio—I’m excited about the potential to work together!</p>
+            <form action="https://formspree.io/f/mnqyqzyq" method="POST" id="contactForm" class="max-w-lg mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 sm:mb-6">
+                    <input type="text" name="name" placeholder="Name*" class="p-2 border rounded-lg" required>
+                    <input type="email" name="email" placeholder="Email*" class="p-2 border rounded-lg" required>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 sm:mb-6">
+                    <input type="tel" name="phone" placeholder="Phone" class="p-2 border rounded-lg">
+                    <select name="interested" placeholder="Interested In*" class="p-2 border rounded-lg" required>
+                        <option value="" disabled selected>Interested In*</option>
+                        <option value="full-time">Full-Time</option>
+                        <option value="internship">Internship</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="freelancing">Freelancing</option>
+                        <option value="suggestions">Suggestions</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <textarea name="message" placeholder="Message*" class="w-full p-2 border rounded-lg mb-4 sm:mb-6" rows="4" required></textarea>
+                <button type="submit" class="bg-red-500 text-white font-bold py-2 px-6 rounded-full hover:bg-red-600 transition hover-glow">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Creative Social Section -->
+    <section class="py-10 sm:py-12 bg-rose-100 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-amber-800 mb-4">Stay Connected</h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">Let’s build something amazing together! Reach out to me on:</p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="mailto:nisha2k21gce@gmail.com" class="text-amber-600 hover:text-amber-800 transition hover-glow"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/nishakumari-finance/" class="text-blue-600 hover:text-blue-800 transition hover-glow"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://x.com/Nisha_773" class="text-blue-400 hover:text-blue-600 transition hover-glow"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://github.com/nisha2k21" class="text-gray-800 hover:text-gray-600 transition hover-glow"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <p class="text-base sm:text-lg mt-4 sm:mt-6 text-gray-700">Dream big, achieve bigger! <span class="contact-creative text-green-500">🌟</span></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rose-900 text-white py-4 sm:py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+            <p class="text-sm sm:text-base">© 2025 Nisha Kumari. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle" class="text-xl font-bold mb-4"></h3>
+            <input type="file" id="imageUpload" accept="image/*" class="mb-4">
+            <button onclick="uploadImage()" class="bg-rose-200 text-amber-900 font-bold py-2 px-4 rounded-xl hover:bg-rose-300 transition hover-glow">Upload</button>
+            <button onclick="replaceImage()" class="bg-rose-200 text-amber-900 font-bold py-2 px-4 rounded-xl hover:bg-rose-300 transition hover-glow">Replace</button>
+            <button onclick="deleteImage()" class="bg-rose-200 text-amber-900 font-bold py-2 px-4 rounded-xl hover:bg-rose-300 transition hover-glow">Delete</button>
+            <button onclick="closeImageModal()" class="bg-gray-300 text-gray-900 font-bold py-2 px-4 rounded-xl hover:bg-gray-400 transition mt-2">Close</button>
+        </div>
+    </div>
+
+    <script>
+        let currentImgId = '';
+
+        function openImageModal(imgId) {
+            currentImgId = imgId;
+            const img = document.getElementById(imgId);
+            const modal = document.getElementById('imageModal');
+            const modalTitle = document.getElementById('modalTitle');
+            modalTitle.textContent = `Edit ${imgId.replace('Img', ' Image')}`;
+
+            if (img.src && (img.src.includes('data:image') || img.src.includes('NISHA NEW.jpg') || img.src.includes('nisha good.jpg'))) {
+                document.getElementById('imageUpload').style.display = 'none';
+                document.querySelector('button[onclick="uploadImage()"]').style.display = 'none';
+                document.querySelector('button[onclick="replaceImage()"]').style.display = 'inline-block';
+                document.querySelector('button[onclick="deleteImage()"]').style.display = 'inline-block';
+            } else {
+                document.getElementById('imageUpload').style.display = 'block';
+                document.querySelector('button[onclick="uploadImage()"]').style.display = 'inline-block';
+                document.querySelector('button[onclick="replaceImage()"]').style.display = 'none';
+                document.querySelector('button[onclick="deleteImage()"]').style.display = 'none';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        function uploadImage() {
+            const input = document.getElementById('imageUpload');
+            const file = input.files[0];
+            const img = document.getElementById(currentImgId);
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    img.src = event.target.result;
+                    closeImageModal();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function replaceImage() {
+            const input = document.getElementById('imageUpload');
+            const file = input.files[0];
+            const img = document.getElementById(currentImgId);
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    img.src = event.target.result;
+                    closeImageModal();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function deleteImage() {
+            const img = document.getElementById(currentImgId);
+            img.src = '';
+            closeImageModal();
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Formspree submission handling
+      
+
+
+    // ... अन्य फंक्शंस (openImageModal, etc.) ...
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        fetch('https://your-backend-url/send-email', { // अपनी बैकएंड URL यहाँ डालें (जैसे https://your-vercel-app.vercel.app/send-email)
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            if (response.ok) {
+                alert('Thank you! Your message has been sent successfully.');
+                this.reset();
+            } else {
+                alert('Oops! There was an issue sending your message.');
+            }
+        }).catch(error => {
+            alert('Error: ' + error.message);
+        });
+    });
+</script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
